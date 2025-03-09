@@ -1,0 +1,10 @@
+const express = require("express");
+const { getGitHubProfile, getRepoDetails, createGitHubIssue } = require("../controllers/githubController");
+
+const router = express.Router();
+
+router.get("/github", getGitHubProfile);
+router.get("/github/:repo", getRepoDetails);
+router.post("/github/:repo/issues", createGitHubIssue);
+
+module.exports = router;
